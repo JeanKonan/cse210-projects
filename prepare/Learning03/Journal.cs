@@ -31,9 +31,10 @@ class Journal
 
         foreach(string line in lines)
         {
-            string[] content = line.Split(",");
+            string[] content = line.Split(";");
             Entry contents = new Entry();
             //Console.WriteLine($"{content[0].GetType()}")
+
             contents._date = DateTime.Parse(content[0]);
             contents._question = content[1];
             contents._answer = content[2];

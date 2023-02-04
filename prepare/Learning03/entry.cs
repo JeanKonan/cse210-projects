@@ -15,7 +15,7 @@ class Entry
 
     public void Hold(List<string> _content)
     {
-            _content.Add ($"{_date.ToShortDateString()},{_question},{_answer}");
+            _content.Add ($"{_date.ToShortDateString()};{_question};{_answer}");
         
         //return _content;
     }

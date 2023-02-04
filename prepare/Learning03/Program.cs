@@ -21,18 +21,7 @@ class Program
 
             user_input = int.Parse(Console.ReadLine());
 
-            string quest1 = "Who was the most interesting person I interacted with today?";
-            string quest2 = "What was the best part of my day?";
-            string quest3 = "How did I see the hand of the Lord in my life today?";
-            string quest4 = "What was the strongest emotion I felt today?";
-            string quest5 = "If I had one thing I could do over today, what would it be?";
-
             Prompt myQuestions = new Prompt();
-            myQuestions._question.Add(quest1);
-            myQuestions._question.Add(quest2);
-            myQuestions._question.Add(quest3);
-            myQuestions._question.Add(quest4);
-            myQuestions._question.Add(quest5);
 
             if (user_input == 1)
             {
