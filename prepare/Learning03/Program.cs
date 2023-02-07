@@ -4,52 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        int user_input = 0;
-        List<string> myContent = new List<string>();
-        string fileName = "";
-        Journal myJournal = new Journal();
+        Fraction fraction1 = new Fraction();
+        Fraction fraction2 = new Fraction(5);
+        Fraction fraction3 = new Fraction(3,4);
+        Fraction fraction4 = new Fraction(1,3);
 
-        do
-        {
-            Console.WriteLine("1. Write");
-            Console.WriteLine("2. Display");
-            Console.WriteLine("3. Load");
-            Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
-
-            Console.Write("What do you want to do? ");
-
-            user_input = int.Parse(Console.ReadLine());
-
-            Prompt myQuestions = new Prompt();
-
-            if (user_input == 1)
-            {
-
-                Entry new_entry = new Entry();
-                new_entry._question = myQuestions.Display();
-
-                Console.Write($"{new_entry._question} ");
-                new_entry._answer = Console.ReadLine();
-                new_entry._date = DateTime.Now;
-                new_entry.Hold(myContent);
-            } 
-            else if (user_input == 2)
-            {
-                myJournal.Display();
-            }
-            else if (user_input == 3)
-            {
-                Console.WriteLine("What is the name of the file?");
-                fileName = Console.ReadLine();
-                myJournal.Load(fileName);
-            }
-            else if (user_input == 4)
-            {
-                myJournal.Save(fileName, myContent);
-            }
-        }
-        while (user_input != 5);
+        fraction1.GetFractionString();
+        fraction1.GetDecimalValue();
+        fraction2.GetFractionString();
+        fraction2.GetDecimalValue();
+        fraction3.GetFractionString();
+        fraction3.GetDecimalValue();
+        fraction4.GetFractionString();
+        fraction4.GetDecimalValue();
         
     }
 }
