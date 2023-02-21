@@ -26,6 +26,14 @@ public class Word
 
     public void Hide()
     {
-       SetWord("____");
+        string _hidden_word = string.Empty;
+        foreach (char letter in _content)
+        {
+            if (letter != '.' || letter != ',' || letter != ';' || letter != ':' || letter != '!' || letter != '?')
+            {
+                _hidden_word += '_';
+            }
+        }
+        SetWord(_hidden_word);
     }
 }

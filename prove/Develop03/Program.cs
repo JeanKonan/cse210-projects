@@ -4,9 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        
         Scripture myScripture = new Scripture();
         myScripture.Display();
-
     }
 }

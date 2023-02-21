@@ -71,7 +71,7 @@ public class Scripture
             int nb = 0 ;
             foreach (Word word in _altContent)
             {
-                if (word.GetWord() == "____")
+                if (word.GetWord()[0] == '_')
                 {
                     nb++;
                 }
@@ -114,7 +114,7 @@ public class Scripture
             {
                 i = hidden.Next(_altContent.Count);
             }
-            while (_altContent[i].GetWord() == "____");
+            while (_altContent[i].GetWord()[0] == '_');
             nb.Add(i);
         }
 
