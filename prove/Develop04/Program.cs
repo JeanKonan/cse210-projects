@@ -5,6 +5,8 @@ class Program
     static void Main(string[] args)
     {
         string myChoice = string.Empty;
+        int nbAct = 0;
+        string end = string.Empty;
         
         while (myChoice != "4")
         {
@@ -24,6 +26,7 @@ class Program
                 myActivity.Create();
                 myActivity.Display();
                 myActivity.Close();
+                nbAct++;
             }
             else if (myChoice == "2")
             {
@@ -31,6 +34,7 @@ class Program
                 myActivity.Create();
                 myActivity.Display();
                 myActivity.Close();
+                nbAct++;
             }
             else if (myChoice == "3")
             {
@@ -38,6 +42,7 @@ class Program
                 myActivity.Create();
                 myActivity.Display();
                 myActivity.Close();
+                nbAct++;
             }
             else if (myChoice == "4")
             {
@@ -51,5 +56,14 @@ class Program
                 myChoice = menu.GetChoice();
             }
         }
+        if (nbAct>1)
+        {
+            end = "ies";
+        }
+        else
+        {
+            end = "y";
+        }
+        Console.WriteLine($"You have completed {nbAct} activit{end} today. See you later");
     }
 }
