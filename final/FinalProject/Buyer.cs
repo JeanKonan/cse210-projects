@@ -4,12 +4,27 @@ public class Buyer: Person
 {
     private string _answer;
     private Stock _theStock;
-    private List<Product> _articles = new List<Product>();
-    private Cart myCart = new Cart();
+    private Bid _myBid = new Bid();
+    private Cart _myCart = new Cart();
 
     public Buyer():base()
     {
 
+    }
+
+    public float GetBidValue()
+    {
+        return _myBid.GetPrice();
+    }
+
+    public void SetBidValue(float price)
+    {
+        _myBid.SetPrice(price);
+    }
+    
+    public float GetCartValue()
+    {
+        return _myCart.GetMinValue().GetPrice();
     }
 
     public void SetStock(Stock myStock)
@@ -22,21 +37,28 @@ public class Buyer: Person
         return _theStock;
     }
 
+    public void MakeBid(float price)
+    {
+        _myBid.SetPrice(price);
+        Console.Write($"Do we have a deal for ${price}?(Yes/No)");
+    }
+
+    public void ApproveBid(float price)
+    {
+        _myBid.SetPrice(price);
+    }
+
     public void Shop()
     {
-        //Stock theStock = new Stock();
-        //theStock.StimulateStock();
         string reply = "yes";
 
         while (reply != "No")
         {
             Console.Write("Which article are you intered in? ");
-            //Product article = new Product();
             
             int index = int.Parse(Console.ReadLine())-1;
             string name = _theStock.GetStock()[index].GetName();
             int qte_left = _theStock.GetStock()[index].GetQuantity( );
-            //string name = _articles[index].GetName();
 
             Console.Write($"How many {name} do you want? ");
             int qte = int.Parse(Console.ReadLine());
@@ -54,7 +76,7 @@ public class Buyer: Person
                     Console.Write($"How many {name} do you want? ");
                 }
             }
-            myCart.Add(_theStock.GetStock()[index], qte);
+            _myCart.Add(_theStock.GetStock()[index], qte);
             _theStock.ReduceStock(index, qte);
 
             Console.Write("Do you want more articles?(Yes/No) ");
@@ -62,13 +84,13 @@ public class Buyer: Person
             Console.WriteLine();
         }
         
-        myCart.View();
+        _myCart.View();
     }
 
     public void Checkout()
     {
         Console.Clear();
-        Console.WriteLine($"Here is your total: ${myCart.GetTotal()}");
+        Console.WriteLine($"Here is your total: ${_myCart.GetTotal()}");
         Console.WriteLine();
     }
 }

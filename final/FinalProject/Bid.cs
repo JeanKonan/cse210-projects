@@ -18,8 +18,8 @@ public class Bid
         _price = price;
     }
 
-    public void Update(float amount)
+    public void Update(float amount, int qte)
     {
-        _price += amount;
+        _price += amount*qte;
     }
 }

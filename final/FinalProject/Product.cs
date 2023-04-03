@@ -58,7 +58,6 @@ public class Product
         _minBid = myBid;
     }
 
-    #region 
 
     public void InsertProduct(string name, int qte, float price, float minB)
     {
@@ -67,7 +66,5 @@ public class Product
         this.SetPrice(price);
         this.SetMinBid(minB);
     }
-
-    #endregion
 
 }

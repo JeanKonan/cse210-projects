@@ -33,12 +33,12 @@ public class Cart
         return _minValue;
     }
 
-    public void UpdateMinValue(float amount)
+    /*public void UpdateMinValue(float amount)
     {
         Bid myBid = new Bid();
         myBid.SetPrice(amount);
         _minValue = myBid;
-    }
+    }*/
 
     public void Add(Product product, int qte)
     {
@@ -64,7 +64,7 @@ public class Cart
             float price = product.GetPrice();
             Bid minVal = product.GetMinBid();
 
-            _minValue.Update(minVal.GetPrice());
+            _minValue.Update(minVal.GetPrice(), qte);
             
             Console.WriteLine($"    {i}-  {qte}*{name} = ${price*qte}");
             i++;

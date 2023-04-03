@@ -49,6 +49,12 @@ public class Menu
         
     }
 
+    public void End()
+    {
+        Console.Clear();
+        Console.WriteLine("Thanks for shopping with FUNSHOPPING! See you soon!");
+    }
+
     public void Start()
     {
         Animation myAnim = new Animation();

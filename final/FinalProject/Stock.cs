@@ -6,7 +6,7 @@ public class Stock
 
     public Stock()
     {
-        //this.StimulateStock();
+
     }
 
     public List<Product> GetStock()
