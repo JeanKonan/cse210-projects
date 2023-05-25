@@ -22,7 +22,7 @@ class Program
         myResume._name = "John Doe";
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
-
+        
         myResume.Display();
     }
 }
